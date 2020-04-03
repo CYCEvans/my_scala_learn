@@ -10,7 +10,7 @@ object Example1203 extends App{
   class StringActor extends Actor {
     val log = Logging(context.system, this);
     def receive = {
-      case s:String => log.info("received message:\n"+s);
+      case s:String => log.info("SA received message:\n"+s);
       case _ => log.info("unknown message");
     }
   }
@@ -21,7 +21,7 @@ object Example1203 extends App{
     //透過context建立StringActor
     var stringActor=context.actorOf(Props[StringActor],name="StringActor")
     def receive = {
-      case s:String => log.info("received message:\n"+s); stringActor!s;
+      case s:String => log.info("Context received message:\n"+s); stringActor!s;
       case _ => log.info("unknown message");
     }
   }

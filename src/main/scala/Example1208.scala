@@ -61,5 +61,5 @@ object Example1208 extends App{
   contextActor!PoisonPill
 
   //關閉ActorSystem
-  system.terminate();
+//  system.terminate();
 }
